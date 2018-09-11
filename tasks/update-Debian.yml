@@ -1,0 +1,8 @@
+---
+- name: Update and upgrade apt packages
+  apt:
+    autoclean: yes
+    autoremove: yes
+    upgrade: yes
+    update_cache: yes
+  notify: reboot server
