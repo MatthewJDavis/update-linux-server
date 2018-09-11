@@ -5,4 +5,7 @@
     autoremove: yes
     upgrade: yes
     update_cache: yes
+- name: Check if reboot is required
+  stat:
+    path: /var/run/reboot-required  
   notify: reboot server
