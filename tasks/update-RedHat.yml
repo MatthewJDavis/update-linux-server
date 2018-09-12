@@ -1,2 +1,15 @@
 ---
-#TODO YUM update module
+- name: Check for updates
+  yum:
+    list: updates
+    update_cache: yes
+  register: upgradeable
+
+- name: show upgradeable packages
+  debug:
+    msg: "{{ upgradeable }}"
+- name: upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+    update_cache: yes
