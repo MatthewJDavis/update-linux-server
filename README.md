@@ -6,7 +6,7 @@ Simple role that will update Debian or RedHat based linux systems.
 
 Currently uses the ansible yum module so no Python3 support on host yet.
 
-# TODO example use
+## Example
 
 To install use ansible-galaxy command:
 
@@ -14,7 +14,17 @@ To install use ansible-galaxy command:
 
 ansible-galaxy install https://github.com/MatthewJDavis/update-linux-server.git
 
-or use the requirements.yml file with ansible-galaxy
+# or use the requirements.yml file with ansible-galaxy
 
 ansible-galaxy install -f requirements.yml
+```
+
+Example playbook
+
+```yaml
+---
+- hosts: linux-servers
+  become: yes
+  roles:
+  - update-linux-server
 ```
