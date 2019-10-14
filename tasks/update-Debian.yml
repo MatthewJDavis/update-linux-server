@@ -3,7 +3,7 @@
   apt:
     autoclean: yes
     autoremove: yes
-    upgrade: yes
+    upgrade: full
     update_cache: yes
 - name: Check if reboot is required
   stat:
